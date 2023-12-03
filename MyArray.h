@@ -15,6 +15,8 @@ private:
     std::vector<Sorting> sortings;
     int selectedSorting = 0;
 public:
+    MyArray() = default;
+    ~MyArray() = default;
     void push_back(const T& value);
     void pop_back();
     T operator[](int index);
