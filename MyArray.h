@@ -7,10 +7,14 @@
 template <typename T>
 class MyArray{
 private:
+    struct Sorting{
+        std::function<bool(T, T)> comparator;
+        std::vector<int> indexes;
+    };
     std::vector<T> data;
-    std::vector<std::function<bool(T, T)>> sortingFunctions;
-    std::vector<std::vector<int>> sortings;
+    std::vector<Sorting> sortings;
     int selectedSorting = 0;
+    void sort();
 public:
     void push_back(const T& value);
     void pop_back();

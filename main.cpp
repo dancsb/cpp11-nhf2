@@ -6,7 +6,7 @@
 int main() {
     MyArray<int> myArray{};
     myArray.push_back(2);
-    myArray.push_back(3);
+    myArray.push_back(4);
     myArray.push_back(1);
 
     std::cout << "--------------------" << std::endl;
