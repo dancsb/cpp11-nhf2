@@ -3,61 +3,46 @@
 #include "MyArray.h"
 #include "MyArray.cpp"
 
+template<typename T>
+void print(MyArray<T> &myArray) {
+    for (size_t i = 0; i < myArray.size(); i++)
+        std::cout << myArray[i] << std::endl;
+
+    std::cout << "--------------------" << std::endl;
+}
+
 int main() {
     MyArray<int> myArray{};
     myArray.push_back(2);
     myArray.push_back(4);
     myArray.push_back(1);
-
-    std::cout << "--------------------" << std::endl;
-
-    std::cout << myArray[0] << std::endl;
-    std::cout << myArray[1] << std::endl;
-    std::cout << myArray[2] << std::endl;
-
-    std::cout << "--------------------" << std::endl;
+    print(myArray);
 
     myArray.createSorting(std::less<>());
-
-    std::cout << myArray[0] << std::endl;
-    std::cout << myArray[1] << std::endl;
-    std::cout << myArray[2] << std::endl;
-
-    std::cout << "--------------------" << std::endl;
+    print(myArray);
 
     myArray.createSorting(std::greater<>());
-
-    std::cout << myArray[0] << std::endl;
-    std::cout << myArray[1] << std::endl;
-    std::cout << myArray[2] << std::endl;
-
-    std::cout << "--------------------" << std::endl;
+    print(myArray);
 
     myArray.setSorting(0);
-
-    std::cout << myArray[0] << std::endl;
-    std::cout << myArray[1] << std::endl;
-    std::cout << myArray[2] << std::endl;
-
-    std::cout << "--------------------" << std::endl;
+    print(myArray);
 
     myArray.push_back(3);
 
     myArray.setSorting(1);
-
-    std::cout << myArray[0] << std::endl;
-    std::cout << myArray[1] << std::endl;
-    std::cout << myArray[2] << std::endl;
-    std::cout << myArray[3] << std::endl;
-
-    std::cout << "--------------------" << std::endl;
+    print(myArray);
 
     myArray.setSorting(2);
+    print(myArray);
 
-    std::cout << myArray[0] << std::endl;
-    std::cout << myArray[1] << std::endl;
-    std::cout << myArray[2] << std::endl;
-    std::cout << myArray[3] << std::endl;
+    myArray.pop_back();
+    myArray.pop_back();
+
+    myArray.setSorting(1);
+    print(myArray);
+
+    myArray.setSorting(2);
+    print(myArray);
 
     return 0;
 }

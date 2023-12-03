@@ -14,11 +14,11 @@ private:
     std::vector<T> data;
     std::vector<Sorting> sortings;
     int selectedSorting = 0;
-    void sort();
 public:
     void push_back(const T& value);
     void pop_back();
     T operator[](int index);
+    size_t size() { return data.size(); }
     void setSorting(int s);
     int createSorting(std::function <bool(T, T)> f);
 };

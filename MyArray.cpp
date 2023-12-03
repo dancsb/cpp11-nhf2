@@ -16,7 +16,8 @@ void MyArray<T>::push_back(const T &value) {
 template<typename T>
 void MyArray<T>::pop_back() {
     data.pop_back();
-    sort();
+    for(auto &sorting : sortings)
+        sorting.indexes.erase(std::find(sorting.indexes.begin(), sorting.indexes.end(), data.size()));
 }
 
 template<typename T>
@@ -42,12 +43,4 @@ int MyArray<T>::createSorting(std::function<bool(T, T)> f) {
 
     selectedSorting = sortings.size();
     return sortings.size();
-}
-
-template<typename T>
-void MyArray<T>::sort() {
-    for(auto &sorting : sortings)
-        std::sort(sorting.indexes.begin(), sorting.indexes.end(), [this, &sorting](const int &a, const int &b) {
-            return sorting.comparator(data[a], data[b]);
-        });
 }
