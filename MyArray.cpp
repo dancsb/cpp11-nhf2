@@ -5,7 +5,12 @@
 template<typename T>
 void MyArray<T>::push_back(const T &value) {
     data.push_back(value);
-    sort();
+    for(auto &sorting : sortings)
+        for (size_t i = 0; i < sorting.indexes.size(); i++)
+            if (sorting.comparator(value, data[sorting.indexes[i]])) {
+                sorting.indexes.insert(sorting.indexes.begin() + i, data.size() - 1);
+                break;
+            }
 }
 
 template<typename T>

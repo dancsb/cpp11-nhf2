@@ -38,5 +38,26 @@ int main() {
     std::cout << myArray[0] << std::endl;
     std::cout << myArray[1] << std::endl;
     std::cout << myArray[2] << std::endl;
+
+    std::cout << "--------------------" << std::endl;
+
+    myArray.push_back(3);
+
+    myArray.setSorting(1);
+
+    std::cout << myArray[0] << std::endl;
+    std::cout << myArray[1] << std::endl;
+    std::cout << myArray[2] << std::endl;
+    std::cout << myArray[3] << std::endl;
+
+    std::cout << "--------------------" << std::endl;
+
+    myArray.setSorting(2);
+
+    std::cout << myArray[0] << std::endl;
+    std::cout << myArray[1] << std::endl;
+    std::cout << myArray[2] << std::endl;
+    std::cout << myArray[3] << std::endl;
+
     return 0;
 }
