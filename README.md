@@ -1,0 +1,8 @@
+# Indexelő tömbök
+Az indexelő tömbök alapötlete, hogy egy adatokat tároló tömb mellé létrehozunk egy ugyanakkora, egészeket tartalmazó tömböt is. Rendezés esetén az eredeti tömböt, abban az elemek sorrendjét változatlanul hagyjuk: csak az indexelő tömbben cserélgetjük ki az integereket. Ez sokkal gyorsabb lehet, mint az eredeti tömbön dolgozni. Tovább a módszer lehetőséget ad arra is, hogy egyszerre egynél többféle rendezettséget is fenntartsunk.
+
+A feladatod egy olyan tömb osztályt csinálni, amely tetszőleges adatokat tárol, és mellé tetszőleges számú indexelő tömböt is fel tud venni! A tömbhöz lehessen hozzáadni elemeket: push_back; ilyenkor természetesen az indexelő tömbök is nyúljanak. Lehessen a tömb végéről törölni: pop_back. Definiálhatsz más műveleteket is, pl. adott (közbenső) elem törlése; ügyelj arra, hogy a törlés hatására az indexelő tömböknek nem csak zsugorodni kell, hanem a bennük lévő indexek változhatnak is.
+
+Az indexelési sorrendeket jelöljék egész számok; legyen 0 a jele a fizikai sorrendnek, 1-től fölfelé pedig a felhasználó által megadottaknak. Lehessen kérni új indexelési sorrendet! Lehessen tetszőlegesen váltani ezek között a sorrendek között, és a tömb indexelő operátora mindig a kiválasztott sorrend szerinti nézetet mutassa! Egy új indexelési sorrend megadásakor az objektum várjon egy rendezőfüggvényt (mint pl. az std::less), amelyet jegyezzen is meg, hogy később a rendezettséget fenn tudja tartani.
+
+A hozzáadás és a törlés, vagyis a push_back() és pop_back() függvények a fizikai sorrendet kell figyelembe vegyék. Így biztosítható az, hogy a pop_back() a legutóbb hozzáadott elemet törli. Másképp a „back”-nek nem lenne értelme.
